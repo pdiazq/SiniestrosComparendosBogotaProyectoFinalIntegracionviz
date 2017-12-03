@@ -1,0 +1,108 @@
+<!-- by Pablo Andres Boada-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>-->
+               
+        <script type="text/javascript" src="//d3js.org/d3.v3.min.js" type="text/javascript"></script>
+        <script src="js/barchart_delta_siniestros.js" charset="utf-8" type="text/javascript"></script>
+        <script src="js/clear.js" charset="utf-8" type="text/javascript"></script>
+        <script src="js/main.js" charset="utf-8" type="text/javascript"></script>
+        <script src="js/linechart_siniestros.js" charset="utf-8" type="text/javascript"></script>
+        <script src="js/barchart_comparendos_tipo.js" charset="utf-8" type="text/javascript"></script>
+        <link rel="STYLESHEET" type="text/css" href="css/css_barcharts_delta_siniestros.css"> 
+        
+    </head>
+    
+    <body >
+        <div id = "Encabezado">
+            <h1>Comportamiento de Siniestros por Año vs Crecimiento de Comparendos</h1>
+            <p>El fitro te permite elegir una de las 5 localidades con mas siniestros acumulados durante los años 2015 a 2017</p>
+        </div>
+          <div id = "lista_localidades">     
+           <form name="form_index" action="SiniestrosComparendos.html">      
+                <select name="Localidad">
+                   <option value="AntonioNarino" >Antonio Nariño</option> 
+                   <option value="Kenedy">Kennedy</option>
+                   <option value="Engativa">Engativa</option>
+                   <option value="Suba">Suba</option>
+                   <option value="Usaquen">Usaquen</option>
+                </select>     
+               <!--<select name="Meses">
+                    <option value="Ene-Feb">Ene-Feb</option> 
+                    <option value="Feb-Mar">Feb-Mar</option> 
+                    <option value="Mar-Abr">Mar-Abr</option> 
+                    <option value="Abr-May">Abr-May</option> 
+                    <option value="May-Jun">May-Jun</option> 
+                    <option value="Jun-Jul">Jun-Jul</option> 
+                    <option value="Jul-Ago">Jul-Ago</option> 
+                    <option value="Ago-Sep">Ago-Sep</option> 
+                    <option value="Sep-Oct">Sep-Oct</option> 
+                    <option value="Oct-Nov">Oct-Nov</option> 
+                    <option value="Nov-Dic">Nov-Dic</option> 
+                    <option value="Dic-Ene">Nov-Dic</option> 
+                </select>  -->
+                <p class="BtnIniciar">
+                    <input type="submit" value="Consultar" name="btn_iniciar"/>
+                </p>
+            </form>
+        </div>
+        <div id = "TextoLines">
+            <h1>Siniestros</h1>
+            <p>Cada plano representa el comportamiento del numero de siniestros en la localidad elegida para cada uno de los años, de izquierda a derecha 2015 a 2017.</p>
+            <p>Cuando pases el puntero por cada circulo, veras el cambio de siniestros en el grafico de barras verticales, tomando como base el numero de siniestros</p>
+            <p>del mes elegido respecto el siguiente. Ejemplo: Si eliges Enero, y el grafico de barras verticales te muestra un +x siniestros, significa que entre Enero</p>
+             <p>y Febrero de ese año, existe un aumento de x siniestros; si es -x , el numero de siniestros tuvo una disminucion entre los meses referencia.</p>
+            <br>
+        </div>   
+        
+        <div id = "linechart_siniestros">
+            <span id="linechart2015">
+            </span>  
+             <span id="linechart2016">
+            </span> 
+            <span id="linechart2017">
+            </span>
+         </div>
+        <p>Revisa aca el delta de siniestros para cada pareja de meses consecutivos del año; pasa el  puntero por las barras verticales:</p>
+            <br>
+        <div id = "barcharts_siniestros">            
+            <span id="ano2015">
+            </span>
+            <span id="ano2016">
+            </span>
+            <span id="ano2017">
+            </span>      
+        </div>     
+             <p>Para los meses elegidos, estos son los tipos de comparendo que aumentaron en numero de un mes respecto al otro. Pasa el puntero sobre las barras 
+                 horizontales y encuentra coincidencias en el tipo de comparendo a traves de los años</p>
+            <br>
+        <div id = "bars_cambio_comparendos">
+            <span id="cambio2015">
+            </span>  
+             <span id="cambio2016">
+            </span> 
+            <span id="cambio2017">
+            </span>
+        </div>
+            <script>     
+                //se llaman las funciones que estan en main.js, desde alli, se invocan las que construllen cada viz
+              dibujar_bars_dom();   
+              dibujar_lines_dom();
+              dibujar_bar_comparendos_dom();
+            </script> 
+            
+            
+           <div id = "Inicio"> 
+             <form name="inicio" action="index.html">      
+                <p class="BtnIniciar">
+                    <input type="submit" value="Volver" name="Volver"/>
+                </p>
+            </form>
+           </div>
+            
+            
+    </body>
+</html>

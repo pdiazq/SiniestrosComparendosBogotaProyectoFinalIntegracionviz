@@ -1,0 +1,82 @@
+html, body, * {
+				font-family: Arial, sans-serif;
+				text-align: center;
+				font-size: 15px 40%;
+			}
+
+
+			
+			g.infowin2015 {
+				fill: black ;
+			}
+
+			g.infowin2015 text,
+			.axis text {
+			  font: 11px sans-serif;
+			  fill:black;
+			}
+                        g.infowin2016 {
+				fill: black;
+			}
+
+			g.infowin2016 text,
+			.axis text {
+			  font: 11px sans-serif;
+			  fill:black;
+			}
+                        g.infowin2017 {
+				fill: grey;
+			}
+
+			g.infowin2017 text,
+			.axis text {
+			  font: 11px sans-serif;
+			  fill:black;
+			}
+
+			.axis path,
+			.axis line {
+			  fill: none;
+			  stroke: #000;
+			  shape-rendering: crispEdges;
+			}
+
+			path.domain {
+				stroke:none;
+			}
+
+
+                        
+                        
+                        
+ path { 
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+}
+
+
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    width: 60px;					
+    height: 28px;					
+    padding: 2px;				
+    font: 15px sans-serif;		
+    background: lightsteelblue;	
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;			
+}
+
+#a2015{
+    width: 60px;					
+    height: 28px;
+}
