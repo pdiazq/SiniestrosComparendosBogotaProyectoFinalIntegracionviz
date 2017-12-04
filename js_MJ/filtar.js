@@ -255,7 +255,7 @@ function my_filter(){
 
         data = sinAndCos(data_a,data_b,data_c,data_d,data_e,data_f,data_g,data_h,data_i,limite);
 
-        alert(data);
+        //alert(data);
 
         d3.select('#chart1').html('svg')
             .datum(data)
