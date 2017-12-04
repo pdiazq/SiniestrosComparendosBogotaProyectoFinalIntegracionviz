@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta charset="utf-8">
+    <link href="css_MJ/nv.d3.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
+    <script src="js_MJ/nv.d3.js"></script>
+
+    <style>
+        text {
+            font: 12px sans-serif;
+        }
+        svg {
+            display: block;
+        }
+        html, body, #chart1, svg {
+            margin: 100px;
+            padding: 0px;
+            height: 85%;
+            width: 90%;
+        }
+
+        .dashed {
+            stroke-dasharray: 5,5;
+        }
+    </style>   
+
+    <script src="js_MJ/jquery.js"></script>
+    <script src="js_MJ/filtar.js">
+    </script>
+
+</head>
+
+
+<body class='with-3d-shadow with-transitions' onload="my_filter()">
+<h1>TIPOS DE COMPARENDOS EN BOGOTÁ</h1>
+<h2>Por Localidad y Año reportado</h2>
+<h3>Para las autoridades de tránsito resulta importante conocer la tendencia de los comparendos impuestos por localidad, para tomar las sanciones educativas y económicas adecuadas con relación a su recurrencia. Así como para manejar la adecuada vigilancia en los corredores cuyas faltas se aprecian más.<br/>Por supuesto, para granularidad  </h3>
+<svg id="chart1"></svg> 
+
+<strong>Seleccione localidad</strong>
+    <select id="my_select_1" onchange="my_filter()">
+        <option value="ANTONIO NARINO">ANTONIO NARINO</option>
+        <option value="BOSA">BOSA</option>
+        <option value="CANDELARIA">CANDELARIA</option>
+        <option value="CHAPINERO">CHAPINERO</option>
+        <option value="CIUDAD BOLIVAR">CIUDAD BOLIVAR</option>
+        <option value="ENGATIVA">ENGATIVA</option>
+        <option value="FONTIBON">FONTIBON</option>
+        <option value="KENNEDY">KENNEDY</option>
+        <option value="MARTIRES">MARTIRES</option>
+        <option value="Otro">Otro</option>
+        <option value="PUENTE ARANDA">PUENTE ARANDA</option>
+        <option value="RAFAEL URIBE">RAFAEL URIBE</option>
+        <option value="SAN CRISTOBAL">SAN CRISTOBAL</option>
+        <option value="SANTA FE">SANTA FE</option>
+        <option value="SUBA">SUBA</option>
+        <option value="SUMAPAZ">TEUSAQUILLO</option>
+        <option value="TUNJUELITO">TUNJUELITO</option>
+        <option value="USAQUEN">USAQUEN</option>
+        <option value="USME">USME</option>
+    </select>
+    <strong>Seleccione año</strong>
+    <select id="my_select_2" onchange="my_filter()">
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+    </select>
+    <div id="tabla"></div><br>
+    <div id="valores"></div><br>
+    <div id="graph" class="aGraph"></div>
+    
+
+</body>
