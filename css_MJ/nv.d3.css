@@ -651,3 +651,9 @@ Interactive Layer
 .nvd3 line.nv-guideline {
     stroke: #ccc;
 }
+
+#Inicio{
+    font-family: Arial, sans-serif;
+    text-align: center;
+    font-size: 20px;
+}

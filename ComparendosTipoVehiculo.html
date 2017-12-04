@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Data Science Curriculum Exploration</title>
+</head>
+
+<div class="navbar">
+<select name="Localidades">
+  <option id="Bosa" value="Bosa">Bosa</option>
+  <option id="AntonioNarino" value="AntonioNarino">Antonio Nariño</option>
+  <option id="BarriosUnidos" value="BarriosUnidos">Barrios Unidos</option>
+  <option id="Candelaria" value="Candelaria">Candelaria</option>
+  <option id="Chapinero" value="Chapinero">Chapinero</option>
+  <option id="Engativa" value="Engativa">Engativá</option>
+  <option id="Fontibon" value="Fontibon">Fontibón</option>
+  <option id="Kenedy" value="Kenedy">Kennedy</option>
+  <option id="Martires" value="Martires">Mártires</option>
+  <option id="PuenteAranda" value="PuenteAranda">Puente Aranda</option>
+  <option id="RafaelUribe" value="RafaelUribe">Rafael Uribe</option>
+  <option id="SanCristobal" value="SanCristobal">San Cristobal</option>
+  <option id="SantaFe" value="SantaFe">Santa Fé</option>
+  <option id="Suba" value="Suba">Suba</option>
+  <option id="Teusaquillo" value="Teusaquillo">Teusaquillo</option>
+  <option id="Tunjuelito" value="Tunjuelito">Tunjuelito</option>
+  <option id="Usaquen" value="Usaquen">Usaquén</option>
+  <option id="Usme" value="Usme">Usme</option>
+</select>
+ <button onclick="maneja_datos()" style="width: 150px">Dibujar</button>
+<div class="hint">Picar sobre el Nombre de la variable por la que se quiera ordenar</div>
+<button onclick="limpiar_dom()" style="width: 150px">Limpiar</button>
+<div>
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <td>Cronológico</td>
+      <td>Muertos</td>
+      <td>Heridos</td>
+      <td>Daños</td>
+      <td>automóvil</td>
+      <td>bicicleta</td>
+      <td>bus</td>
+      <td>buseta</td>
+      <td>camión</td>
+      <td>camioneta</td>
+      <td>campero</td>
+      <td>micro</td>
+      <td>microbus</td>
+      <td>minivan</td>
+      <td>motocarro</td>
+      <td>motocicleta</td>
+      <td>sin informacion en carpet</td>
+      <td>traccion animal</td>
+      <td>tractocamión</td>
+      <td>volqueta</td>
+    </tr>
+  </thead>
+</div>
+</div>
+
+
+<style type="text/css">
+.navbar {
+    overflow: hidden;
+    background-color: #F4FA58;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+}
+span {
+    padding-top: 2cm;
+}
+body {
+  font: 14px "Helvetica Neue";
+}
+table {
+  border-collapse: collapse;
+  width: 960px;
+}
+th {
+  font-weight: normal;
+  text-align: right;
+  padding-right: 6px;
+}
+thead td {
+  cursor: s-resize;
+}
+tbody td {
+  height: 12px;
+}
+tbody .punch {
+  background: darkslateblue;
+  margin: 0 auto;
+}
+.hint {
+  color: #999;
+  text-align: center;
+}
+</style>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script>
+function maneja_datos(){
+  if (document.getElementById('AntonioNarino').selected)
+  {
+    var texto = document.getElementById('AntonioNarino').value;
+    dibujar_datos(texto);    
+  }
+  if (document.getElementById('BarriosUnidos').selected)
+  {
+    var texto = document.getElementById('BarriosUnidos').value;
+    dibujar_datos(texto);    
+  }
+  if (document.getElementById('Bosa').selected)
+  {
+    var texto = document.getElementById('Bosa').value;
+    dibujar_datos(texto);    
+  }
+  if (document.getElementById('Candelaria').selected)
+  {
+    var texto = document.getElementById('Candelaria').value;
+    dibujar_datos(texto);    
+  }
+  if (document.getElementById('Chapinero').selected)
+  {
+    var texto = document.getElementById('Chapinero').value;
+    dibujar_datos(texto);    
+  }
+  if (document.getElementById('Engativa').selected)
+  {
+    var texto = document.getElementById('Engativa').value;
+    dibujar_datos(texto);    
+  }
+  if (document.getElementById('Fontibon').selected)
+  {
+    var texto = document.getElementById('Fontibon').value;
+    dibujar_datos(texto);    
+  }
+  if (document.getElementById('Kenedy').selected)
+  {
+    var texto = document.getElementById('Kenedy').value;
+    dibujar_datos(texto);    
+  }
+  if (document.getElementById('Martires').selected)
+  {
+    var texto = document.getElementById('Martires').value;
+    dibujar_datos(texto);    
+  }
+  if (document.getElementById('PuenteAranda').selected)
+  {
+    var texto = document.getElementById('PuenteAranda').value;
+    dibujar_datos(texto);    
+  }
+  if (document.getElementById('RafaelUribe').selected)
+  {
+    var texto = document.getElementById('RafaelUribe').value;
+    dibujar_datos(texto);    
+  }
+  if (document.getElementById('SanCristobal').selected)
+  {
+    var texto = document.getElementById('SanCristobal').value;
+    dibujar_datos(texto);    
+  }
+  if (document.getElementById('SantaFe').selected)
+  {
+    var texto = document.getElementById('SantaFe').value;
+    dibujar_datos(texto);    
+  }
+  if (document.getElementById('Suba').selected)
+  {
+    var texto = document.getElementById('Suba').value;
+    dibujar_datos(texto);    
+  }
+  if (document.getElementById('Teusaquillo').selected)
+  {
+    var texto = document.getElementById('Teusaquillo').value;
+    dibujar_datos(texto);    
+  }
+  if (document.getElementById('Tunjuelito').selected)
+  {
+    var texto = document.getElementById('Tunjuelito').value;
+    dibujar_datos(texto);    
+  }
+  if (document.getElementById('Usaquen').selected)
+  {
+    var texto = document.getElementById('Usaquen').value;
+    dibujar_datos(texto);    
+  }
+  if (document.getElementById('Usme').selected)
+  {
+    var texto = document.getElementById('Usme').value;
+    dibujar_datos(texto);    
+  }
+}
+function limpiar_dom(){
+    var elementos = d3.selectAll("tr");
+    elementos.remove();
+}
+function dibujar_datos(nombre){ 
+var ext = ".csv";
+var ruta = "data_PD/";
+var nombre_archivo = ruta.concat(nombre).concat(ext);
+d3.csv(nombre_archivo, function(csv) {
+  var courses = d3.keys(csv[0]).filter(function(key) {
+    return key != "Fecha" && key != "Año";
+  });
+  d3.selectAll("thead td").data(courses).on("click", function(k) {
+    tr.sort(function(a, b) { return (b[k]) - (a[k]); });
+  });
+  var tr = d3.select("tbody").selectAll("tr")
+      .data(csv)
+    .enter().append("tr");
+  var x = d3.scale.sqrt().domain([0,(d3.max(csv, function(d) {return +d.Muertos;}) + 10)]).range([0,16]);
+  tr.append("th")
+      .text(function(d) { return d.Fecha; });
+  tr.selectAll("td")
+      .data(function(d) { return courses.map(function(k) { return d[k]; }); })
+    .enter().append("td")
+      .append("div")
+      .attr("class", "punch")
+      .style("border-radius", function(d) { 
+        return Math.ceil(x(+d)/2) + "px"; 
+      })
+      .style("height", function(d) { 
+        return Math.ceil(x(+d)) + "px"; 
+      })
+      .style("width", function(d) { 
+        return Math.ceil(x(+d)) + "px";
+      }); 
+});
+}
+</script>
+<body>
+<span style="display:block; height: YOURHEIGHT;"></span>
+<table>
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <td>Cronológico</td>
+      <td>Muertos</td>
+      <td>Heridos</td>
+      <td>Daños</td>
+      <td>automóvil</td>
+      <td>bicicleta</td>
+      <td>bus</td>
+      <td>buseta</td>
+      <td>camión</td>
+      <td>camioneta</td>
+      <td>campero</td>
+      <td>micro</td>
+      <td>microbus</td>
+      <td>minivan</td>
+      <td>motocarro</td>
+      <td>motocicleta</td>
+      <td>sin informacion en carpet</td>
+      <td>traccion animal</td>
+      <td>tractocamión</td>
+      <td>volqueta</td>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+   <div id = "Inicio"> 
+             <form name="inicio" action="index.html">      
+                <p class="BtnIniciar">
+                    <input type="submit" value="Volver" name="Volver" width="40px" height="20px"/>
+                </p>
+            </form>
+    </div>
+</body>
+</html>
